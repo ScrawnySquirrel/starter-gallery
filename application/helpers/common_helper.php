@@ -14,13 +14,13 @@ if (!defined('APPPATH'))
  */
 function fieldExtract($source, $target, $fields)
 {
-    foreach ($fields as $prop)
+  foreach ($fields as $prop)
+  {
+    if (isset($source[$prop]))
     {
-	if (isset($source[$prop]))
-	{
-	    $target->$prop = html_entity_decode($source[$prop]);
-	}
+        $target->$prop = html_entity_decode($source[$prop]);
     }
+  }
 }
 /**
  * Inject cells into an array from corresponding properties in an object
